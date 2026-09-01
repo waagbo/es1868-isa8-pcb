@@ -64,9 +64,11 @@ It's important to add the `/XEA` parameter to `UNISOUND.COM` when using it, and 
 
 ## Bill of Materials
 
-**TODO**
+See [BOM_smd.md](BOM_smd.md) / [BOM_smd.csv](BOM_smd.csv) for the SMD variant of the board
+(`ISA_ES1868_smd.*`, see [SMD_CONVERSION.md](SMD_CONVERSION.md)), with DigiKey, Mouser and
+LCSC part numbers.
 
-Value of L1/L2/L3 ferrite beads is non critical. I used [these](https://www.mouser.it/ProductDetail/623-2743001112LF).
+Value of L1/L2/L3 ferrite beads is non critical. On the original THT board I used [these](https://www.mouser.it/ProductDetail/623-2743001112LF); the SMD variant uses the same 0805 bead as L4–L9/L12.
 
 ## Known Issues
 

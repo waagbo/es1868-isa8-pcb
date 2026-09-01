@@ -28,4 +28,6 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+# ...but keep the curated BOM
+!BOM_smd.csv
 
