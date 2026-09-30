@@ -64,6 +64,11 @@ It's important to add the `/XEA` parameter to `UNISOUND.COM` when using it, and 
 
 ## Bill of Materials
 
+For the original through-hole board (`ISA_ES1868.*`, rev 1.2) see
+[BOM_tht_digikey.md](BOM_tht_digikey.md) / [BOM_tht_digikey.csv](BOM_tht_digikey.csv): a DigiKey
+order list (PCB reference, description, DigiKey part number, quantity) with audio-grade parts in
+the signal path. The CSV can be uploaded to DigiKey's BOM Manager / myLists.
+
 See [BOM_smd.md](BOM_smd.md) / [BOM_smd.csv](BOM_smd.csv) for the SMD variant of the board
 (`ISA_ES1868_smd.*`, see [SMD_CONVERSION.md](SMD_CONVERSION.md)), with DigiKey, Mouser and
 LCSC part numbers.
