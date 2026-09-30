@@ -31,7 +31,8 @@ U4,"EEPROM 93LC66C 4Kbit Microwire, DIP-8, ORG-pin C-version (board selects x8) 
 U4 (socket),"IC socket DIP-8 0.3in, machined pins, gold contacts - for U4 - Mill-Max 110-43-308-41-001000",ED90032-ND,1
 U7 (socket),"IC socket DIP-14 0.3in, machined pins, gold contacts - for U7 (protects the scarce LM1877) - Mill-Max 110-43-314-41-001000",ED90033-ND,1
 Y1,"Crystal 14.31818MHz, HC-49/U full height, fundamental, parallel 18pF, +/-20ppm (lay flat, strap case to the ground pad) - Abracon AB-14.31818MHZ-B2",535-AB-14.31818MHZ-B2CT-ND,1
-"J1, J2, J7","Jack 3.5mm stereo, right angle THT, 3-pin no switch, threaded M6x0.5 bushing + nut - LINE IN, LINE OUT, SPKR OUT - Kycon STX-3100-3C",2092-STX-3100-3C-ND,3
+J1,"Jack 3.5mm stereo, right angle THT, 5-pin (switch pins unused here, they anchor the jack), light blue (PC99 line in), plastic 6.8mm nose, no thread - LINE IN - Kycon STX-3120-5B-284C",2092-STX-3120-5B-284C-ND,1
+"J2, J7","Jack 3.5mm stereo, right angle THT, 5-pin (switch pins unused here, they anchor the jack), lime (PC99 line out / speakers), plastic 6.8mm nose, no thread - LINE OUT, SPKR OUT - Kycon STX-3120-5B-577C",2092-STX-3120-5B-577C-ND,2
 J3,"D-sub DA-15 female, right angle PCB, 0.318in footprint, 4-40 threaded inserts + board locks, gold flash - joystick / MIDI - NorComp 182-015-213R531",182-15FE-ND,1
 J3 (screwlocks),"Female screwlock 4-40, 3/16in hex, 6.0mm thread - clamps the 3D-printed bracket to J3 - NorComp SFSO4405NR",SFSO4405NR-ND,2
 J5,"Pin header 2x13 male, 2.54mm, vertical, gold - wavetable (Wave Blaster) connector - Sullins PBC13DAAN",35-PBC13DAAN-ND,1

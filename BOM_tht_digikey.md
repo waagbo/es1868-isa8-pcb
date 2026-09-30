@@ -8,7 +8,7 @@ digikey.com on 2026-09-30; stock and prices are a snapshot. Upload file:
 **Ordering:** in DigiKey's BOM Manager (or myLists → *Upload a list*) upload the CSV, map the columns
 (*Reference Designator*, *DigiKey Part Number*, *Quantity*; or map the references to *Customer
 Reference* to get them printed on each bag) and set the number of boards. Delete the last two lines
-(U3, U7) first — DigiKey doesn't sell those. Roughly $45 per board at single-board prices, excluding
+(U3, U7) first — DigiKey doesn't sell those. Roughly $43 per board at single-board prices, excluding
 U3/U7.
 
 Lines marked **AUDIO** are in, or reference, the audio signal path and use audio-grade parts (see
@@ -48,7 +48,8 @@ Lines marked **AUDIO** are in, or reference, the audio signal path and use audio
 | U4 (socket) | IC socket DIP-8 0.3in, machined pins, gold contacts - for U4 - Mill-Max 110-43-308-41-001000 | ED90032-ND | 1 |
 | U7 (socket) | IC socket DIP-14 0.3in, machined pins, gold contacts - for U7 (protects the scarce LM1877) - Mill-Max 110-43-314-41-001000 | ED90033-ND | 1 |
 | Y1 | Crystal 14.31818MHz, HC-49/U full height, fundamental, parallel 18pF, +/-20ppm (lay flat, strap case to the ground pad) - Abracon AB-14.31818MHZ-B2 | 535-AB-14.31818MHZ-B2CT-ND | 1 |
-| J1, J2, J7 | Jack 3.5mm stereo, right angle THT, 3-pin no switch, threaded M6x0.5 bushing + nut - LINE IN, LINE OUT, SPKR OUT - Kycon STX-3100-3C | 2092-STX-3100-3C-ND | 3 |
+| J1 | Jack 3.5mm stereo, right angle THT, 5-pin (switch pins unused here, they anchor the jack), light blue (PC99 line in), plastic 6.8mm nose, no thread - LINE IN - Kycon STX-3120-5B-284C | 2092-STX-3120-5B-284C-ND | 1 |
+| J2, J7 | Jack 3.5mm stereo, right angle THT, 5-pin (switch pins unused here, they anchor the jack), lime (PC99 line out / speakers), plastic 6.8mm nose, no thread - LINE OUT, SPKR OUT - Kycon STX-3120-5B-577C | 2092-STX-3120-5B-577C-ND | 2 |
 | J3 | D-sub DA-15 female, right angle PCB, 0.318in footprint, 4-40 threaded inserts + board locks, gold flash - joystick / MIDI - NorComp 182-015-213R531 | 182-15FE-ND | 1 |
 | J3 (screwlocks) | Female screwlock 4-40, 3/16in hex, 6.0mm thread - clamps the 3D-printed bracket to J3 - NorComp SFSO4405NR | SFSO4405NR-ND | 2 |
 | J5 | Pin header 2x13 male, 2.54mm, vertical, gold - wavetable (Wave Blaster) connector - Sullins PBC13DAAN | 35-PBC13DAAN-ND | 1 |
@@ -79,7 +80,7 @@ Jumper shunts such as Harwin M7582-05 have no use on this board: it has no 2.54 
 * **Resistors:** Vishay MBA0204 thin metal film, 1 %, 50 ppm/K (low current noise). The 0204 body on
   the 0207 footprint is deliberate: Vishay allows it to be bent to the 7.62 mm pitch, while the 0207-size
   MBB version needs at least 10 mm.
-* **Connectors:** gold-plated headers, D-sub and IC-socket contacts; the jacks are nickel/tin.
+* **Connectors:** gold-plated headers, D-sub and IC-socket contacts; the jacks are tin-plated.
 
 ## Differences from the values printed on the PCB
 
@@ -109,14 +110,25 @@ Jumper shunts such as Harwin M7582-05 have no use on this board: it has no 2.54 
   square pad).
 * J3's board-lock holes are Ø2.87 mm (NorComp recommends Ø3.05 mm): expect a firm press, or ream
   lightly.
-* The jack footprint's locating-peg holes are Ø1.2 mm; if a jack won't seat, trim the pegs or open the
-  holes to 1.6 mm.
+* **Jacks:** Kycon STX-3120 in PC99 colours (blue line in, lime line out / speaker out), same pins and
+  posts as the STX-3100 the original build used. The 5-pin (switched) version is used on purpose: its
+  two switch pins go into pads 4/5, which are unconnected on this board, so they only add solder joints
+  — the jacks have no nut, so the joints take the plug forces. DigiKey had only 9 of the blue 5B on
+  2026-09-30; fallbacks are the 3-pin blue STX-3120-3B-284C (2092-STX-3120-3B-284C-ND) or the black
+  5-pin STX-3120-5B (2092-STX-3120-5B-ND).
+* The jack footprint's locating-post holes are Ø1.2 mm; if a jack won't seat, trim the posts or open
+  the holes to 1.6 mm.
+* **Left/right:** Kycon jacks put the tip on pad 3. The PCB wires LINE OUT (J2) with tip and ring the
+  other way round from LINE IN (J1) and SPKR OUT (J7), so LINE OUT is correct but LINE IN and SPKR OUT
+  come out left/right swapped — as on the original build. Swap the speaker plugs if it matters.
 * Y1 lies flat; strap its case to the ground pad.
 
 ## Notes for the 3D-printed bracket
 
-* **Jacks:** the M6×0.5 threaded bushing is only 3.5 mm long (nut included), so keep the wall at the
-  jacks about 1–1.5 mm thick, or counterbore it, so the nut can grip.
+* **Jacks:** plain Ø6.8 mm plastic nose, no thread or nut — make the holes about 7.0–7.2 mm. The
+  opening centres are 6.5 mm above the PCB top surface and 13.46 mm apart (J7, J2, J1 in order towards
+  the ISA fingers), and each nose ends about 3.0 mm beyond the PCB edge, so keep the wall at the jacks
+  under 3 mm (thinner is better) so plugs seat fully.
 * **DA-15:** two 4-40 female screwlocks clamp the bracket to J3's threaded inserts. Thread length needed
   ≈ wall + ~1 mm flange + engagement: the listed SFSO4405NR (6.0 mm) suits 1.5–2.5 mm walls;
   SFSO4404NR (5.0 mm, SFSO4404NR-ND) for thinner and SFSO4401NR (7.9 mm, SFSO4401NR-ND) for thicker
